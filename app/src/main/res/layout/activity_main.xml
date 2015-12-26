@@ -12,19 +12,34 @@
 
     <TextView
         android:id="@+id/texttitle"
+        android:textColor="@color/text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/title"
         android:textSize="@dimen/h1"
         android:textStyle="bold"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+         />
 
     <Button
-
+        android:id="@+id/buttonok"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="#0b0b0b"
         android:text="OK"
         android:textSize="23dp"
-        android:background="transparent"
-        android:layout_alignParentBottom="true"/>
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <ListView
+
+        android:layout_below="@+id/texttitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:id="@+id/listView"
+        android:layout_above="@+id/buttonok" />
+
+
+
 </RelativeLayout>
