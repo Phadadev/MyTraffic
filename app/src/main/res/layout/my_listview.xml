@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@color/gray">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="@dimen/icon"
+        android:layout_height="@dimen/icon"
+        android:background="@drawable/traffic_01"
+        android:layout_margin="20dp" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/textView1"
+            android:textSize="20sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Don't turn Left" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:textSize="20sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Adjust 5000$" />
+
+    </LinearLayout>
+</LinearLayout>

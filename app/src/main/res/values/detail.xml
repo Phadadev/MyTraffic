@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="detail_short">
+
+        <item>sub title1</item>
+        <item>sub title2</item>
+        <item>sub title3</item>
+        <item>sub title4</item>
+        <item>sub title5</item>
+        <item>sub title6</item>
+        <item>sub title7</item>
+        <item>sub title8</item>
+        <item>sub title9</item>
+        <item>sub title10</item>
+        <item>sub title11</item>
+        <item>sub title12</item>
+        <item>sub title13</item>
+        <item>sub title14</item>
+        <item>sub title15</item>
+        <item>sub title16</item>
+        <item>sub title17</item>
+        <item>sub title18</item>
+        <item>sub title19</item>
+        <item>sub title20</item>
+
+
+    </string-array>
+
+</resources>
