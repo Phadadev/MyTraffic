@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 
@@ -35,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     private void listviewcontroller() {
 
         // #1
-        int[] iintIcon = {R.drawable.traffic_01,R.drawable.traffic_02,
+        final int[] iintIcon = {R.drawable.traffic_01,R.drawable.traffic_02,
                 R.drawable.traffic_03,R.drawable.traffic_04,R.drawable.traffic_05,
                 R.drawable.traffic_06,R.drawable.traffic_07,R.drawable.traffic_08,
                 R.drawable.traffic_09,R.drawable.traffic_10,R.drawable.traffic_11,
@@ -44,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
                 R.drawable.traffic_18,R.drawable.traffic_19,R.drawable.traffic_20};
 
         //#2
-        String[] strtitle = new String[20];
+        final String[] strtitle = new String[20];
         strtitle[0] = "Title1";
         strtitle[1] = "Title2";
         strtitle[2] = "Title3";
@@ -67,12 +68,31 @@ public class MainActivity extends AppCompatActivity {
         strtitle[19] = "Title20";
 
         //#3
-        String[] strDetail = getResources().getStringArray(R.array.detail_short); //pull data from detail.xml
+        final String[] strDetail = getResources().getStringArray(R.array.detail_short); //pull data from detail.xml
 
         //Call MyAdapter
         MyAdapter objMyAdapter = new MyAdapter(MainActivity.this,strtitle,strDetail,iintIcon);
         trafficListView.setAdapter(objMyAdapter);
 
+        //Active when Click on ListView
+        trafficListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                //Intent to DetailActivity
+                Intent objIntent = new Intent(MainActivity.this,DetailActivity.class);
+
+
+                //putExtra
+                objIntent.putExtra("Title",strtitle[position]);
+                objIntent.putExtra("Image",iintIcon[position]);
+                objIntent.putExtra("Index",strDetail[position]);
+
+
+                startActivity(objIntent);
+
+            }   //Event
+        });
 
 
     }   //listviewcontroller
@@ -90,6 +110,11 @@ public class MainActivity extends AppCompatActivity {
                 //Intent to WebView
                 Intent objIntent = new Intent(Intent.ACTION_VIEW);
                 objIntent.setData(Uri.parse("https://youtu.be/tXSC8xBPF5U"));
+
+
+
+
+
                 startActivity(objIntent);
             }   //Event
         });
